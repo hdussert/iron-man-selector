@@ -1,5 +1,6 @@
 import { useState } from "react";
 import images from "../assets/images";
+import { CharacterList } from "./CharacterList";
 import { GameSettings } from "./GameSettings";
 
 // Bad performance but fills our needs
@@ -31,14 +32,10 @@ const GameManager = () => {
   return (
     <>
       <GameSettings setPlayer1={setPlayer1} setPlayer2={setPlayer2} startGame={startGame} />
-      <h1>{player1}</h1>
-      {teamPlayer1.map((character) => (
-        <img style={{ width: "50px", height: "50px" }} key={`p1-${character}`} src={images[character]} />
-      ))}
-      <h1>{player2}</h1>
-      {teamPlayer2.map((character) => (
-        <img style={{ width: "50px", height: "50px" }} key={`p2-${character}`} src={images[character]} />
-      ))}
+      <div style={{ display: "flex", justifyContent: "center", gap: "128px" }}>
+        <CharacterList playerName={player1} list={teamPlayer1} />
+        <CharacterList playerName={player2} list={teamPlayer2} />
+      </div>
     </>
   );
 };
