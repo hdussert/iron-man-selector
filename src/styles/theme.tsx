@@ -19,7 +19,9 @@ export const { theme, styled, css, keyframes } = createStitches({
 export const globalStyles = globalCss({
   body: {
     color: theme.colors.text,
-    backgroundColor: theme.colors.background,
+    // backgroundColor: "line"
+    background: "linear-gradient(90deg, red, blue)",
+    height: "100vh",
     margin: 0,
     fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
           'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -28,5 +30,7 @@ export const globalStyles = globalCss({
   "*": {
     margin: "0",
     padding: "0",
+    boxSizing: "border-box",
+    userSelect: "none",
   },
 });
